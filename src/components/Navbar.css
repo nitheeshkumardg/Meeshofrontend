@@ -1,0 +1,76 @@
+/* Add a vertical line to the right of the nav items */
+.nav-item-with-line {
+    position: relative;
+  }
+  
+  .nav-item-with-line::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    height: 70%;
+    width: 2px; /* Line width */
+    background-color:#ddd; /* Line color */
+    transform: translateY(-50%);
+  }
+  
+  /* Remove the line from the last item */
+  .nav-item-with-line:last-child::after {
+    display: none;
+  }
+  
+  /* Optional: Adjust spacing between items and lines */
+  .nav-item-with-line {
+    padding-right: 1.5rem; /* Adjust spacing as needed */
+  }
+  
+
+/* Navbar2 css */
+
+
+/* Navbar styles */
+.navbar-nav {
+    flex-direction: row;
+  }
+  
+  .nav-item {
+    margin: 0 10px; /* Spacing between items */
+  }
+  
+  .nav-link {
+    color: #0c0b0b; /* Darker text color */
+    transition: color 0.3s;
+  }
+  
+  .nav-link:hover {
+    color: #000; /* Change text color on hover */
+  }
+  
+  .dropdown-menu {
+    display: none; /* Hide dropdown by default */
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    color: #333;
+  }
+  
+  .dropdown-menu.show {
+    display: block; /* Show dropdown when .show class is added */
+  }
+  
+  .nav-item:hover .dropdown-menu {
+    display: block; /* Show dropdown on hover */
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 992px) {
+    .navbar-nav {
+      flex-direction: column; /* Stack items vertically on small screens */
+    }
+    
+    .nav-item {
+      margin: 10px 0; /* Vertical spacing between items */
+    }
+  }

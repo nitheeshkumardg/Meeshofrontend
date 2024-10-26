@@ -1,10 +1,7 @@
 import React from 'react'
 import './details.css'
 import Rating from '@mui/material/Rating';
-import Button from '@mui/material/Button';
-import Stack from '@mui/material/Stack';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 
 
 
@@ -16,22 +13,6 @@ import Productsection from './Productsection';
 
 
 let ProductDetails=({product}) =>{
-
-
-
-//     const dispatch=useDispatch()
-// const handleCart=()=>{
-//     dispatch(addtoCart(product))
-//     alert('Added to Cart')
-    
-// }
-
-
-// if (!product) {
-// return <p>Loading product details...</p>; 
-// }
-
-
   return (
     <>
     <div>
@@ -110,14 +91,7 @@ let ProductDetails=({product}) =>{
 
     </div>
     <div style={{ marginLeft: '200px' , marginTop:'25px'}}>
-    {/* <Stack direction="row" spacing={2}>
-      <Button variant="outlined" startIcon={<AddShoppingCartIcon />} onClick={handleCart}>
-        Add to Cart
-      </Button>
-      <Button variant="contained" endIcon={<ArrowForwardIosIcon />} to='/cart'>
-        Buy Now
-      </Button>
-    </Stack> */}
+    
     <Productsection product={product}/>
 
        </div>

@@ -21,6 +21,9 @@ import Sellerproductdisplay from './components/Sellerproductdisplay';
 import Paymentpage from './pages/Paymentpage'
 import { loadStripe } from '@stripe/stripe-js';
 import { Elements } from '@stripe/react-stripe-js';
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
+
 
 const stripePromise = loadStripe('pk_test_51Q67t5FjBO2aKAV3yDfzBS9Vvpjqm4tiuXI0xHdjNI2YYNvAW8IgcUcNj4inwGA6tDp7FUKzAL7agx2RlPbXmyYI00qRRf8vNS');
 function App() {
@@ -48,6 +51,8 @@ function App() {
       <Route path="/sellerRegister" element={<SellerRegister/>} />
       <Route path="/sellerLogin" element={<Sellerlogin/>} />
       <Route path="/Vendor/products" element={<Sellerproductdisplay/>} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/reset-password" element={<ResetPassword />} />
       <Route path="/payment" element={<Elements stripe={stripePromise}><Paymentpage /> </Elements> } />
         
       </Route>

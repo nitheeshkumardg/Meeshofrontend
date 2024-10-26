@@ -8,7 +8,7 @@ const SellerRegister = () => {
     email: "",
     name: "",
     password: "",
-    userType: "customer", // default value
+    userType: "customer", 
   });
 
   const [message, setMessage] = useState("");
@@ -37,7 +37,7 @@ const SellerRegister = () => {
         }
       );
       setMessage(res.data.message || "Registration successful!");
-      // Optionally, reset form
+      
       setFormData({
         email: "",
         name: "",
@@ -116,7 +116,7 @@ const SellerRegister = () => {
                 </button>
               </form>
 
-              {/* Success and error messages */}
+              
               {message && (
                 <p className="mt-3 text-center text-success">{message}</p>
               )}

@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link, Outlet,useNavigate } from 'react-router-dom';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import IconButton from '@mui/material/IconButton';
 import Person2OutlinedIcon from '@mui/icons-material/Person2Outlined';
-import MenuIcon from '@mui/icons-material/Menu'; // Import the Menu icon
+import MenuIcon from '@mui/icons-material/Menu'; 
 import { useSelector,useDispatch } from 'react-redux';
-import { login, logout } from "../reducers/userReducer";
+import {  logout } from "../reducers/userReducer";
+import { fetchCartItems } from '../reducers/cartReducer';
+import { clearCart } from '../reducers/cartReducer';
 
 
 
@@ -17,20 +19,26 @@ function Navbar1() {
   const { isLogin, userDetails } = useSelector((state) => state.user);
   console.log(isLogin, userDetails);
   function logoutHandler() {
+    localStorage.removeItem("token");
     dispatch(logout());
+    dispatch(clearCart());
     navigate("/Login");
   }
 
   const cartCounter = useSelector((state) => state.cart.cartCounter);
+  console.log(cartCounter);
+  
 
-  // State for managing the mobile menu toggle
+  
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  useEffect(() => {
+    dispatch(fetchCartItems());
+  }, [dispatch]);
   return (
     <>
   <nav className="bg-gray-100 py-4">
     <div className="container mx-auto flex justify-between items-center">
-      {/* Logo Section */}
+      
       <Link to="/">
         <img
           src="https://www.meesho.com/assets/svgicons/meeshoLogo.svg"
@@ -39,23 +47,23 @@ function Navbar1() {
         />
       </Link>
 
-      {/* Toggler Button for small screens */}
+      
       <button
         className="block lg:hidden text-gray-700 focus:outline-none"
         type="button"
-        onClick={() => setIsMenuOpen(!isMenuOpen)} // Toggle the menu on click
+        onClick={() => setIsMenuOpen(!isMenuOpen)} 
         aria-label="Toggle navigation"
       >
-        <MenuIcon /> {/* The three-line (hamburger) icon */}
+        <MenuIcon /> 
       </button>
 
-      {/* Collapsible Navbar Content */}
+      
       <div
         className={`${
           isMenuOpen ? 'block' : 'hidden'
         } lg:flex justify-between items-center space-x-6 w-full`}
       >
-        {/* Search Bar */}
+       
         <form className="flex-grow mx-4">
           <input
             className="w-full px-4 py-2 border rounded-lg focus:outline-none"
@@ -65,9 +73,9 @@ function Navbar1() {
           />
         </form>
 
-        {/* Navigation Links */}
+        
         <ul className="flex flex-col lg:flex-row items-center lg:space-x-6 z-50">
-          {/* Download App Dropdown */}
+          
           <li className="relative group border-r border-gray-600 pr-4">
              <button className="text-black">Download App</button>
             <ul className="absolute hidden group-hover:block bg-white shadow-lg py-2 space-y-2">
@@ -76,7 +84,7 @@ function Navbar1() {
             className="flex items-center px-4 py-2 hover:bg-gray-200"
             to="https://play.google.com/store/apps/details?id=com.meesho.supply"
            >
-           {/* Play Store Icon */}
+           
            <img
             src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
            alt="Play Store"
@@ -90,7 +98,7 @@ function Navbar1() {
            className="flex items-center px-4 py-2 hover:bg-gray-200"
           to="https://apps.apple.com/in/app/meesho/id1457958492"
          >
-          {/* Apple Store Icon */}
+          
         <img
           src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
           alt="Apple Store"
@@ -105,14 +113,14 @@ function Navbar1() {
 
 
 
-          {/* Become a Supplier */}
+          
           <li className="border-r border-gray-600 pr-4">
             <Link className="text-black hover:text-gray-600" to="#">
               Become a Supplier
             </Link>
           </li>
 
-          {/* News Room */}
+          
           <li className="border-r border-gray-600 pr-4">
             <Link
               className="text-black hover:text-gray-600"
@@ -122,7 +130,7 @@ function Navbar1() {
             </Link>
           </li>
 
-          {/* Profile */}
+          
           <li className="relative group">
             <IconButton color="primary">
               <Person2OutlinedIcon />
@@ -150,7 +158,7 @@ function Navbar1() {
             </ul>
           </li>
 
-          {/* Cart */}
+          
           <li className="flex items-center">
             <IconButton color="primary">
               <AddShoppingCartIcon />

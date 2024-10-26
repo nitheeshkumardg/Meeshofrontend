@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Ads from './Ads';
 import '../assests/Productsitem.json'
-import productData from '../assests/Productsitem.json' // Local JSON file
+import productData from '../assests/Productsitem.json' 
 
 function Productdisplay() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    // Fetching products from local JSON
+    
     setProducts(productData);
   }, []);
 

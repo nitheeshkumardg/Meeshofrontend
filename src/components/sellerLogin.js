@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 
 
 const Sellerlogin = () => {
-  //user Login infomation
+  
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({
     email: "",
@@ -43,14 +43,14 @@ const Sellerlogin = () => {
         }
       );
       navigate("/Vendor/products");
-      // console.log(res.data.user);
+      
 
       dispatch(login(res.data.user));
 
       setMessage("Login successful!");
 
       if (res?.data?.token) {
-        // Store the token or other data
+        
         localStorage.setItem("token", res?.data?.token);
       } else {
         navigate("/Login");
@@ -126,7 +126,7 @@ const Sellerlogin = () => {
                  </Link>
               </p>
 
-              {/* Success and error messages */}
+              
               {message && (
                 <p className="mt-3 text-center text-success">{message}</p>
               )}

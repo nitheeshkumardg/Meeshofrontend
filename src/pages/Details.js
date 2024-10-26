@@ -7,28 +7,15 @@ import productData from '../assests/Productsitem'
 
 let Details=() =>{
     let product=useSelector((state)=>state.currentProduct.product)
-
-    
-     
-        
-      
-    
-
-
-
-  return (
+ return (
     <>
     <div >
     <Navbar1/>
     <Navbar2/>
     </div>
     <div style={{ marginTop: '30px' }} >
-    
       <ProductDetails product={product}/>
-
     </div>
-    
-    
     </>
   )
 }

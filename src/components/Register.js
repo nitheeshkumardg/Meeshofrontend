@@ -8,7 +8,7 @@ const Register = () => {
     email: "",
     name: "",
     password: "",
-    userType: "customer", // default value
+    userType: "customer", 
   });
 
   const [message, setMessage] = useState("");
@@ -37,7 +37,7 @@ const Register = () => {
         }
       );
       setMessage(res.data.message || "Registration successful!");
-      // Optionally, reset form
+    
       setFormData({
         email: "",
         name: "",
@@ -102,24 +102,6 @@ const Register = () => {
                     required
                   />
                 </div>
-
-                {/* <div className="form-group mb-3">
-                  <label>User Type:</label>
-                  <select
-                    name="userType"
-                    className="form-control"
-                    value={formData.userType}
-                    onChange={handleChange}
-                    required
-                  >
-                    <option value="customer">Customer</option>
-                    <option value="staff">Staff</option>
-                    <option value="admin">Admin</option>
-                    <option value="vendor">Vendor</option>
-                    <option value="delivery_partner">Delivery Partner</option>
-                  </select>
-                </div> */}
-
                 <button
                   type="submit"
                   className="btn btn-primary w-100"
@@ -133,7 +115,7 @@ const Register = () => {
                 </button>
               </form>
 
-              {/* Success and error messages */}
+              
               {message && (
                 <p className="mt-3 text-center text-success">{message}</p>
               )}

@@ -7,9 +7,9 @@ const Footer = () => {
   return (
     <footer className="bg-gray-200 py-8">
       <div className="container mx-auto px-4">
-        {/* Footer Sections in a Row */}
+        
         <div className="flex flex-col md:flex-row justify-between items-start md:space-x-6 space-y-6 md:space-y-0">
-          {/* Company Section */}
+          
           <div className="md:w-1/5">
             <h3 className="text-lg font-bold mb-2">Company</h3>
             <ul>
@@ -36,7 +36,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Support Section */}
+          
           <div className="md:w-1/5">
             <h3 className="text-lg font-bold mb-2">Support</h3>
             <ul>
@@ -58,7 +58,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Discover Section */}
+        
           <div className="md:w-1/5">
             <h3 className="text-lg font-bold mb-2">Discover</h3>
             <ul>
@@ -70,7 +70,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Download Our App Section */}
+          
           <div className="md:w-1/5">
             <h2 className="text-lg font-bold mb-2">Download Our App</h2>
             <p className="text-sm text-gray-600 mb-2">
@@ -94,7 +94,7 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Follow Us Section with Social Media Links */}
+          
           <div className="md:w-1/5">
             <h2 className="text-lg font-bold mb-2">Follow Us</h2>
             <div className="flex space-x-4">
@@ -141,7 +141,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Footer Bottom */}
+        
         <div className="text-center text-gray-600 text-sm mt-6">
           <p>© 2024 Meesho Company. All Rights Reserved.</p>
         </div>

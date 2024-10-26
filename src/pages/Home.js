@@ -5,9 +5,9 @@ import Footer from '../components/Footer1'
 import Carousal from '../components/Carousal'
 
 import {useEffect,useState} from 'react';
-import Ads from '../components/Ads'
 
-import Products from '../components/Products'
+
+
 import '../assests/Productsitem.json'
 import productData from '../assests/Productsitem.json'
 import Filtersection from '../components/FilterSection'
